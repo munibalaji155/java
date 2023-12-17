@@ -1,0 +1,387 @@
+1.prime no:
+public class Main{    
+ public static void main(String args[]){    
+  int i,m=0,flag=0;      
+  int n=3;
+  m=n/2;      
+  if(n==0||n==1){  
+   System.out.println(n+" is not prime number");      
+  }else{  
+   for(i=2;i<=m;i++){      
+    if(n%i==0){      
+     System.out.println(n+" is not prime number");      
+     flag=1;      
+     break;      
+    }      
+   }      
+   if(flag==0)  { System.out.println(n+" is prime number"); }  
+  } 
+}    
+} 
+
+2.arm strong:
+
+public class Armstrong {
+
+    public static void main(String[] args) {
+
+        int number = 371, originalNumber, remainder, result = 0;
+
+        originalNumber = number;
+
+        while (originalNumber != 0)
+        {
+            remainder = originalNumber % 10;
+            result += Math.pow(remainder, 3);
+            originalNumber /= 10;
+        }
+
+        if(result == number)
+            System.out.println(number + " is an Armstrong number.");
+        else
+            System.out.println(number + " is not an Armstrong number.");
+    }
+}
+
+3.palindrome:
+
+class PalindromeExample{  
+ public static void main(String args[]){  
+  int r,sum=0,temp;    
+  int n=454;//It is the number variable to be checked for palindrome  
+  
+  temp=n;    
+  while(n>0){    
+   r=n%10;  //getting remainder  
+   sum=(sum*10)+r;    
+   n=n/10;    
+  }    
+  if(temp==sum)    
+   System.out.println("palindrome number ");    
+  else    
+   System.out.println("not palindrome");    
+}  
+}  
+
+4.left triangle 
+
+public class LeftTrianglePattern  
+{    
+public static void main(String args[])   
+{    
+int i, j, row = 6;       
+for (i=0; i<row; i++)   
+{  
+for (j=2*(row-i); j>=0; j--)         
+{     
+System.out.print(" ");   
+}   
+for (j=0; j<=i; j++ )   
+{   
+System.out.print("* ");   
+}    
+System.out.println();   
+}   
+}   
+} 
+
+5.pyramid:
+
+public class PyramidPattern  
+{    
+public static void main(String args[])   
+{    
+int i, j, row = 6;       
+for (i=0; i<row; i++)   
+{  
+for (j=row-i; j>1; j--)   
+{  
+System.out.print(" ");   
+}   
+for (j=0; j<=i; j++ )   
+{   
+System.out.print("* ");   
+}     
+System.out.println();   
+}   
+}   
+} 
+
+6:reverse pyramid:
+
+public class ReversePyramidPattern  
+{  
+public static void main(String[] args)  
+{  
+int rows=8;  
+for (int i= 0; i<= rows-1; i++)  
+{  
+for (int j=0; j<=i; j++)  
+{  
+System.out.print(" ");  
+}  
+for (int k=0; k<=rows-1-i; k++)  
+{  
+System.out.print("*" + " ");  
+}  
+System.out.println();  
+}  
+}  
+}  
+
+7:pascal triangle:
+
+public class Pattern3  
+{              
+public static void main(String[] args)   
+{  
+int n = 8;    
+for (int i = 0; i < n; i++)   
+{  
+int number = 1;  
+System.out.printf("%" + (n - i) * 2 + "s", "");  
+for (int j = 0; j <= i; j++)   
+{  
+System.out.printf("%4d", number);  
+number = number * (i - j) / (j + 1);  
+}  
+System.out.println();  
+}  
+}  
+} 
+
+8:numbers right angle triangle:
+public class Pattern1  
+{  
+public static void main(String args[])   
+{   
+int i, j,number, n=7;   
+for(i=0; i<n; i++)  
+{   
+number=1;    
+for(j=0; j<=i; j++)  
+{    
+System.out.print(number+ " ");     
+number++;   
+}   
+System.out.println();   
+}   
+}   
+}
+
+9:skipping num:
+
+import java.util.Scanner;
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+       Scanner input = new Scanner(System.in);
+int m=input.nextInt();
+int n=input.nextInt();
+int k=input.nextInt();
+for(int i=m;i<=n;i=i+k+1)
+{
+ System.out.print(i+" ");
+}
+}}
+
+10:matrix addition:
+
+import java.util.Scanner;
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+      Scanner input = new Scanner(System.in);
+int mat1[][]={{1,2},{5,3}};
+int mat2[][]={{2,3},{4,1}};
+int mat_sum[][]=new int[2][2];
+int len=mat1.length;
+for(int i=0;i<len;i++)
+{
+ for(int j=0;j<len;j++)
+ {
+ mat_sum[i][j]=mat1[i][j]+mat2[i][j];
+ System.out.print(mat_sum[i][j]+"\t");
+ }
+ System.out.println();
+}
+}}
+
+11:matrix mul
+
+  import java.util.Scanner;
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+      Scanner input = new Scanner(System.in);
+int r=input.nextInt();
+int c=input.nextInt();
+int mat1[][]=new int[r][c];
+int mat2[][]=new int[r][c];
+for(int i=0;i<r;i++)
+{
+ for(int j=0;j<c;j++)
+ {
+ mat1[i][j]=input.nextInt();
+ }
+}
+for(int i=0;i<r;i++)
+{
+ for(int j=0;j<c;j++)
+ {
+ mat2[i][j]=input.nextInt();
+ }
+}
+int sum[][]=new int[r][c];
+for(int i=0;i<r;i++)
+{
+ for(int j=0;j<c;j++)
+ {
+ sum[i][j]=0;
+ for(int k=0;k<c;k++)
+ {
+ sum[i][j] = sum[i][j] +(mat1[i][k]*mat2[k][j]);
+ }
+ System.out.print(sum[i][j] + "\t");
+ }
+ System.out.println();
+}
+}}
+
+12:mean,median,mode
+
+  import java.util.Scanner;
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+ Scanner input=new Scanner(System.in);
+int a[]={16,18,27,16,23,21,19};
+int len=a.length;
+int sum=0;
+for(int i=0;i<len;i++)
+{
+ sum=sum+a[i];
+}
+int mean=sum/len;
+System.out.println("mean: "+mean);
+for(int i=0;i<len;i++)
+{
+ for(int j=i+1;j<len;j++)
+ {
+ if(a[i]>a[j])
+ {
+ int temp=a[i];
+ a[i]=a[j];
+ a[j]=temp;
+ }
+ }
+}
+for(int i=0;i<len;i++)
+{
+ if(len%2==0)
+ {
+ int mid=len/2;
+ System.out.print("median: "+a[mid-1]);
+ break;
+ }
+ else
+ {
+ int mid=(len+1)/2;
+ System.out.print(mid);
+ System.out.println("median: "+a[mid-1]);
+ break;
+ }
+}
+for(int i=0;i<len;i++)
+{
+ for(int j=i+1;j<len;j++)
+ {
+ if(a[i]==a[j])
+ {
+ System.out.println("mode: "+a[i]);
+ break;
+ }
+ }
+}
+}}
+
+13:vowels:
+
+import java.util.Scanner;
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+Scanner input=new Scanner(System.in);
+String name=input.nextLine();
+int len=name.length();
+char a[]=new char[len];
+int vow=0;
+for(int i=0;i<len;i++)
+{
+ a[i]=name.charAt(i);
+ if(a[i]=='a'||a[i]=='e'||a[i]=='i'||a[i]=='o'||a[i]=='u'
+ ||a[i]=='A'||a[i]=='E'||a[i]=='I'||a[i]=='O'||a[i]=='U')
+ vow=vow+1;
+}
+System.out.println(vow);
+}}
+
+14:vowels and consonents:
+
+import java.util.Scanner;
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+Scanner input=new Scanner(System.in);
+String name=input.nextLine();
+int len=name.length();
+char a[]=new char[len];
+char vow[]=new char[len];
+char con[]=new char[len];
+int v=0,c=0;
+for(int i=0;i<len;i++)
+{
+ a[i]=name.charAt(i);
+ if(a[i]=='a'||a[i]=='e'||a[i]=='i'||a[i]=='o'||a[i]=='u'
+ ||a[i]=='A'||a[i]=='E'||a[i]=='I'||a[i]=='O'||a[i]=='U') {
+ vow[v] = a[i];
+ v++;
+ }
+ else {
+ con[c] = a[i];
+ c++;
+ }
+}
+System.out.print("Consonants: ");
+for(int i=0;i<v;i++)
+{
+ System.out.print(vow[i]);
+}
+System.out.print("\nvowels: ");
+for(int j=0;j<c;j++)
+{
+ System.out.print(con[j]);
+}
+}}
+
+15:composite num:
+
+Scanner input=new Scanner(System.in);
+int arr[]={16,18,27,16,23,21,19};
+int len=arr.length;
+int count=0;
+for(int i=0;i<len;i++)
+{
+ int c=0;
+ for(int j=1;j<100;j++)
+ {
+ if(arr[i]%j==0)
+ {
+ c++;
+ }
+ }
+ if(c>2)
+ count++;
+}
+System.out.println(count);
+
